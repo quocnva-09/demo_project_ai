@@ -32,15 +32,15 @@ The backend runs on port `8080` by default.
    ```
 2. Create/Check your `.env` file containing the environment properties:
    ```env
-   SERVER_PORT=8080
-   DB_URL=jdbc:mysql://localhost:3306/demo-auth
-   DB_USERNAME=root
-   DB_PASSWORD=your_password
+   SERVER_PORT
+   DB_URL
+   DB_USERNAME
+   DB_PASSWORD
    # Ensure you provide a strong 256-bit hex/base64 key for JWT signing 
-   JWT_SIGNER_KEY=73df47146d3ec8114ddbdfde00e80e4dd65492e5e6756069eb612844c096a50d
-   JWT_VALID_DURATION=36000000
-   JWT_REFRESHABLE_DURATION=120000000
-   FE_URL_LOCAL=http://localhost:5173
+   JWT_SIGNER_KEY
+   JWT_VALID_DURATION
+   JWT_REFRESHABLE_DURATION
+   FE_URL_LOCAL
    ```
 3. Run the Spring Boot application:
    ```bash
@@ -60,7 +60,7 @@ The frontend runs on port `5173` using Vite.
    ```
 2. Create/Check your `.env` file to ensure the base URL for the API is set:
    ```env
-   VITE_API_BASE_URL=http://localhost:8080/demo-auth
+   VITE_API_BASE_URL
    ```
 3. Install dependencies and start the dev server:
    ```bash
