@@ -70,7 +70,7 @@ export const LoginForm: React.FC = () => {
         </a>
       </div>
 
-      <Button type="submit" disabled={!isFormValid || isLoading} className="mt-[8px]">
+      <Button type="submit" className="mt-[8px]">
         {isLoading ? 'Logging in...' : 'Login'}
       </Button>
 

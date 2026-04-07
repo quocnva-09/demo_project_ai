@@ -17,10 +17,10 @@ export const RegisterForm: React.FC = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
-  const [touched, setTouched] = useState({ 
-    username: false, 
-    email: false, 
+
+  const [touched, setTouched] = useState({
+    username: false,
+    email: false,
     phone: false,
     password: false,
     confirmPassword: false
@@ -30,21 +30,21 @@ export const RegisterForm: React.FC = () => {
   const emailError = touched.email ? validateField('email', email) : null;
   const phoneError = touched.phone ? validateField('phone', phone) : null;
   const passwordError = touched.password ? validateField('password', password) : null;
-  const confirmPasswordError = touched.confirmPassword 
-    ? (password !== confirmPassword ? "Passwords do not match" : null) 
+  const confirmPasswordError = touched.confirmPassword
+    ? (password !== confirmPassword ? "Passwords do not match" : null)
     : null;
 
   const isFormValid = useMemo(() => {
-    return username.length > 0 && 
-           email.length > 0 && 
-           phone.length > 0 &&
-           password.length > 0 && 
-           confirmPassword.length > 0 &&
-           password === confirmPassword &&
-           validateField('username', username) === null &&
-           validateField('email', email) === null &&
-           validateField('phone', phone) === null &&
-           validateField('password', password) === null;
+    return username.length > 0 &&
+      email.length > 0 &&
+      phone.length > 0 &&
+      password.length > 0 &&
+      confirmPassword.length > 0 &&
+      password === confirmPassword &&
+      validateField('username', username) === null &&
+      validateField('email', email) === null &&
+      validateField('phone', phone) === null &&
+      validateField('password', password) === null;
   }, [username, email, phone, password, confirmPassword]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -109,8 +109,8 @@ export const RegisterForm: React.FC = () => {
         onBlur={() => setTouched({ ...touched, confirmPassword: true })}
         error={confirmPasswordError}
       />
-      
-      <Button type="submit" disabled={!isFormValid || isLoading} className="mt-[8px]">
+
+      <Button type="submit" className="mt-[8px]">
         {isLoading ? 'Registering...' : 'Register'}
       </Button>
 
