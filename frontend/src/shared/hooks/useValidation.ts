@@ -14,7 +14,7 @@ export const validationConfig = {
     message: "Password must include uppercase, lowercase, number, and special character",
   },
   phone: {
-    regex: /^\+?[0-9]{10,15}$/,
+    regex: /^\+?[0-9]{10}$/,
     message: "Invalid phone number (10-15 digits starting optionally with +)",
   },
   identifier: {

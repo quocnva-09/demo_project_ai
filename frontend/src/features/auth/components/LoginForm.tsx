@@ -69,7 +69,7 @@ export const LoginForm: React.FC = () => {
           Forgor password ?
         </a>
       </div>
-
+      {/* disabled={!isFormValid || isLoading} use if want to disable by isValidForm */}
       <Button type="submit" className="mt-[8px]">
         {isLoading ? 'Logging in...' : 'Login'}
       </Button>

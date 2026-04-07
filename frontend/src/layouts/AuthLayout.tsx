@@ -66,8 +66,8 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, heading }) => 
 
       {/* Right Column */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-[24px] sm:px-[60px] xl:px-[100px]">
-        <h2 className="hidden lg:block text-[32px] font-semibold text-[#000000] mb-[32px]">{heading}</h2>
-        <div className="w-full w-[500px] max-w-[500px]">
+        <div className="w-full max-w-[500px] mx-auto">
+          <h2 className="hidden lg:block text-[32px] font-semibold text-[#000000] mb-[32px]">{heading}</h2>
           {children}
         </div>
       </div>
