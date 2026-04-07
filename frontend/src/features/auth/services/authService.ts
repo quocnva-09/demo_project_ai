@@ -14,6 +14,11 @@ export const authService = {
     return response.data;
   },
 
+  getMe: async () => {
+    const response = await axiosInstance.get("/users/me");
+    return response.data;
+  },
+
   logout: () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
