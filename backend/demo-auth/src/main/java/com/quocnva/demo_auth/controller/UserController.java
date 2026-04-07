@@ -31,4 +31,45 @@ public class UserController {
                 .result(userService.getMyInfo())
                 .build();
     }
+
+    @GetMapping
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public ApiResponse<java.util.List<UserResponse>> getAllUsers() {
+        return ApiResponse.<java.util.List<UserResponse>>builder()
+                .result(userService.getAllUsers())
+                .build();
+    }
+
+    @GetMapping("/{id}")
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public ApiResponse<UserResponse> getUserById(@PathVariable Long id) {
+        return ApiResponse.<UserResponse>builder()
+                .result(userService.getUserById(id))
+                .build();
+    }
+
+    @PostMapping
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public ApiResponse<UserResponse> createUser(@RequestBody @Valid com.quocnva.demo_auth.dto.request.UserCreateRequest request) {
+        return ApiResponse.<UserResponse>builder()
+                .result(userService.createUser(request))
+                .build();
+    }
+
+    @PutMapping("/{id}")
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public ApiResponse<UserResponse> updateUser(@PathVariable Long id, @RequestBody @Valid com.quocnva.demo_auth.dto.request.UserUpdateRequest request) {
+        return ApiResponse.<UserResponse>builder()
+                .result(userService.updateUser(id, request))
+                .build();
+    }
+
+    @DeleteMapping("/{id}")
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public ApiResponse<String> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ApiResponse.<String>builder()
+                .result("User deleted successfully")
+                .build();
+    }
 }
