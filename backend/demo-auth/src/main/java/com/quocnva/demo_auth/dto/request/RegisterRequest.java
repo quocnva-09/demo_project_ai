@@ -14,11 +14,11 @@ import lombok.experimental.FieldDefaults;
 public class RegisterRequest {
 
     @NotBlank(message = "USERNAME_INVALID")
-    @Size(min = 3, message = "USERNAME_INVALID")
+    @Size(min = 6, message = "USERNAME_INVALID")
     String username;
 
     @NotBlank(message = "INVALID_PASSWORD")
-    @Size(min = 8, message = "INVALID_PASSWORD")
+    @Size(min = 6, message = "INVALID_PASSWORD")
     String password;
 
     @NotBlank(message = "INVALID_KEY")

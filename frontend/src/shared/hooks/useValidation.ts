@@ -1,4 +1,4 @@
-export type ValidationRule = "username" | "email" | "password" | "phone";
+export type ValidationRule = "username" | "email" | "password" | "phone" | "identifier";
 
 export const validationConfig = {
   username: {
@@ -16,6 +16,10 @@ export const validationConfig = {
   phone: {
     regex: /^\+?[0-9]{10,15}$/,
     message: "Invalid phone number (10-15 digits starting optionally with +)",
+  },
+  identifier: {
+    regex: /^(?:[A-Za-z0-9._-]{4,}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|(?=.*[a-zA-Z])[a-zA-Z0-9]{6,18})$/,
+    message: "Must be a valid username or email",
   },
 };
 

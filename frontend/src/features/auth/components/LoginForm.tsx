@@ -17,7 +17,7 @@ export const LoginForm: React.FC = () => {
 
   const [touched, setTouched] = useState({ emailOrUsername: false, password: false });
 
-  const emailOrUsernameError = touched.emailOrUsername && !emailOrUsername ? "Required" : null;
+  const emailOrUsernameError = touched.emailOrUsername ? validateField('identifier', emailOrUsername) : null;
   const passwordError = touched.password ? validateField('password', password) : null;
 
   const isFormValid = useMemo(() => {
